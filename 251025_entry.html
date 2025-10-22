@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OWHEECE in Taipei - 應援說明 (Fanchant Guide)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+TC:wght{400;700}&display=swap" rel="stylesheet">
     <style>
         /* CSS Reset and Global Styles */
         * {
@@ -116,21 +116,65 @@
             border-top: 1px dashed #444444; /* 虛線分隔 */
         }
 
-        .download-area a {
+        .download-area p {
+            color:#b0b0b0; 
+            margin-bottom: 10px;
+        }
+
+        .download-links {
+            display: flex; /* 讓兩個下載按鈕並排 */
+            justify-content: center;
+            gap: 15px; /* 按鈕間距 */
+            flex-wrap: wrap; /* 手機上可以換行 */
+        }
+
+        .download-links a {
             display: inline-block;
             background-color: #666666; /* 按鈕顏色 */
             color: #ffffff;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 10px 15px;
             border-radius: 4px;
             font-weight: 700;
             transition: background-color 0.3s;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            min-width: 120px; /* 確保按鈕有足夠寬度 */
         }
 
-        .download-area a:hover {
+        .download-links a:hover {
             background-color: #888888;
         }
+
+        /* 頁尾與 Logo */
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #444444;
+            text-align: center;
+        }
+
+        .team-logo {
+            width: 60px; /* 方形大小 */
+            height: 60px; /* 方形大小 */
+            background-color: #444444; /* Logo 預留區背景色 */
+            margin: 10px auto 0; /* 置中 */
+            border-radius: 4px; /* 輕微圓角 */
+            /* 預設的 Logo 樣式，您可以替換成實際圖片 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.7rem;
+            color: #888888;
+        }
+
+        /* 如果您使用 img 標籤 */
+        .team-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
 
         /* 手機 RWD 優化 */
         @media (max-width: 600px) {
@@ -146,8 +190,18 @@
                 font-size: 1.3rem;
             }
 
-            .fanchant-guide p, .notes li, .download-area a {
+            .fanchant-guide p, .notes li, .download-links a {
                 font-size: 0.9rem;
+            }
+
+            .download-links {
+                flex-direction: column; /* 手機上按鈕垂直堆疊 */
+                gap: 10px;
+            }
+
+            .download-links a {
+                 min-width: 80%; /* 佔用較多寬度 */
+                 margin: 0 auto;
             }
         }
     </style>
@@ -193,14 +247,24 @@
                     <li>請將色卡<span class="highlight">平舉至眼睛下方即可</span>，勿高舉過頭影響其他職員視線。</li>
                     <li><span class="highlight">非應援時間點</span>請勿拿出應援色卡。</li>
                     <li>在 OWHEECE 會議結束後，請將色卡<span class="highlight">帶走</span>（請勿將公司財產遺留在現場）。</li>
-                    <li>OWHEECE 員工證 <span class="highlight">pdf 檔</span>提供下載，各位職員可自行加工留念。</li>
+                    <li>OWHEECE 員工證 <span class="highlight">PNG 檔 (A/B 面)</span> 提供下載，各位職員可自行加工留念。</li>
                 </ol>
             </div>
         </main>
 
-        <footer class="download-area">
-            <p style="color:#b0b0b0; margin-bottom: 10px;">OWHEECE 員工證下載區：</p>
-            <a href="your_employee_card_link.pdf" download="OWHEECE_Employee_ID.pdf">下載 OWHEECE 員工證 (PDF)</a>
+        <div class="download-area">
+            <p>OWHEECE 員工證下載區 (PNG)：</p>
+            <div class="download-links">
+                <a href="your_employee_card_A_link.png" download="251025_moomoo_cheer_A.png">下載 A 面 (PNG)</a>
+                <a href="your_employee_card_B_link.png" download="251025_moomoo_cheer_B.png">下載 B 面 (PNG)</a>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <p style="font-size: 0.8rem; color: #888888;">文件執行團隊：</p>
+            <div class="team-logo">
+                <img src="logo.png" alt="團隊 Logo">
+                </div>
         </footer>
     </div>
 
